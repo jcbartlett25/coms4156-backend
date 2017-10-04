@@ -1,0 +1,28 @@
+{
+  "name": "coms4156-backend",
+  "version": "1.0.0",
+  "description": "A toy demo project for class",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcbartlett25/coms4156-backend.git"
+  },
+  "dependencies": {
+    "express": "^4.0.0",
+    "mysql": "^2.5.4",
+    "path": "^0.12.7",
+    "mocha": "^3.0.0"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jcbartlett25/coms4156-backend/issues"
+  },
+  "homepage": "https://github.com/jcbartlett25/coms4156-backend#readme",
+  "devDependencies": {
+    "mocha": "^4.0.0"
+  }
+}
