@@ -1,7 +1,10 @@
 var express = require('express');
 var app = express();
+var http = require('http').Server(app);
 var mysql = require('mysql');
 var path = require('path');
+
+var port = process.env.PORT || 8080;
 
 var db = mysql.createConnection({
   host     : 'db4free.net',
@@ -31,10 +34,10 @@ app.get('/save', function(req, res){
     db.query('INSERT INTO Data(data) VALUES ("'+data+'");', function(err, rows, fields){
         if(err){
             console.log(err);
-            res.send('Error in save');
+            res.send('Error in save. Go to <a href="/">here</a> to refresh');
         }
         else{
-            res.send('Success. Go to localhost:3005/all to see new entry');
+            res.send('Success. Go to <a href="all">here</a> to see all entries');
         }
     });
 });
@@ -46,7 +49,7 @@ app.get('/all', function(req, res){
     db.query('SELECT * FROM Data;', function(err, rows, fields){
         if(err){
             console.log(err);
-            res.send('Error in getting data');
+            res.send('Error in getting data. Go to <a href="/">here</a> to refresh');
         }
         else{
             for(var i=0; i<rows.length; i++) {
@@ -57,6 +60,7 @@ app.get('/all', function(req, res){
     });
 });
 
-app.listen(3005);
-
-console.log('Listening on port 3005...');
+// Hard coded the port for simplicity at the moment
+http.listen(port, function(){
+    console.log('listening on *:'+port);
+});
