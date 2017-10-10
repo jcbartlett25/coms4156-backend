@@ -25,5 +25,8 @@
   "homepage": "https://github.com/jcbartlett25/coms4156-backend#readme",
   "devDependencies": {
     "mocha": "^4.0.0"
+  },
+  "engines": {
+    "node": "5.6.0"
   }
 }
