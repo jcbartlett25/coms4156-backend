@@ -8,9 +8,16 @@ var db = mysql.createConnection({
 });
 
 describe('Database', function() {
+
   describe('#connect()', function() {
+
     it('should connect to the database without problems', function() {
-      return assert.equal(-1, [1,2,3].indexOf(4));
+
+
+        db.connect(function(err) {
+            if (err) done(err);
+            else done();
+        });
     });
   });
 });
